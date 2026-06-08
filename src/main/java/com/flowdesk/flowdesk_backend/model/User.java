@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "users")
 public class User {
@@ -15,6 +15,7 @@ public class User {
 
     private String name;
     private String email;
+   @JsonIgnore
     private String password;
 
     @Enumerated(EnumType.STRING)
